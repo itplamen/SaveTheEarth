@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Save The Earth</title>
+    <link type="text/css" rel="stylesheet" href="Styles/style.css"/>
+    <script src="Scripts/Libraries/require.js" data-main="Scripts/app"></script>
+</head>
+<body>
+    <canvas id="CanvasContainer" width="800" height="600">
+        Your browser does not support canvas. Please try again with a different browser.
+    </canvas>
+
+    <div id="Menu">
+        <div id="WelcomeScreen">
+            <p id="WelcomeText">Welcome to <br/>SAVE THE EARTH v.1.0</p>
+
+            <div id="NewGame" class="button">
+                <img src="Images/MenuImages/ScreenIcons/new-game-icon.jpg"/>
+                <p class="textUnderBoxes">New Game</p>
+            </div>
+
+            <div id="Continue" class="button">
+                <img src="Images/MenuImages/ScreenIcons/continue-game-icon.png"/>
+                <p class="textUnderBoxes">Continue</p>
+            </div>
+
+            <div id="Options" class="button">
+                <img src="Images/MenuImages/ScreenIcons/options-icon.jpg"/>
+                <p class="textUnderBoxes">Options</p>
+            </div>
+
+            <div id="Ranking" class="button">
+                <img src="Images/MenuImages/ScreenIcons/ranking-icon.jpg"/>
+                <p class="textUnderBoxes">Ranking</p>
+            </div>
+
+            <div id="Info" class="button">
+                <img src="Images/MenuImages/ScreenIcons/info-icon.jpg"/>
+                <p class="textUnderBoxes">Info</p>
+            </div>
+        </div>
+
+        <div id="SelectSpaceshipScreen">
+            <p class="title">Select Spaceship</p>
+
+            <div id="LeftArrow"></div>
+
+            <div id="Wrapper">
+                <h3 id="SpaceshipName"></h3>
+
+                <div id="SpaceshipFeatures">
+                    <p class="featureName">Speed</p>
+                    <div class="progressBar">
+                        <div id="SpeedCurrentProgress" class="currentProgress"></div>
+                    </div>
+                    <span id="SpeedPercentages" class="percentages"></span>
+
+                    <p class="featureName">Damage</p>
+                    <div class="progressBar">
+                        <div id="DamageCurrentProgress" class="currentProgress"></div>
+                    </div>
+                    <span id="DamagePercentages" class="percentages"></span>
+
+                    <p class="featureName">Strength</p>
+                    <div class="progressBar">
+                        <div id="StrengthCurrentProgress" class="currentProgress"></div>
+                    </div>
+                    <span id="StrengthPercentages" class="percentages"></span>
+
+                    <p class="featureName">Special Ability</p>
+                    <p id="SpecialAbility"></p>
+                    <div class="progressBar">
+                        <div id="SpecialAbilityCurrentProgress" class="currentProgress"></div>
+                    </div>
+                    <span id="SpecialAbilityPercentages" class="percentages"></span>
+                </div>
+
+                <div id="Container"></div>
+            </div>
+
+            <div id="RightArrow"></div>
+        </div>
+
+        <div id="LoadGameScreen">
+            <p class="title">Load Game</p>
+
+            <div id="LoadGameScreenContainer">
+                <div id="LeftArrowSlider"></div>
+
+                <div id="WrapperSlider">
+                    <h3 id="SavedGameDate">The game was saved on <span id="DateOfSavedGame"></span> at
+                        <span id="TimeOfSavedGame"></span></h3>
+
+                    <div id="SavedGameInfo">
+                        <p id="Nickname">Nickname: <span></span></p>
+                        <p id="Level">Level: <span></span></p>
+                        <p id="Points">Points: <span></span></p>
+                        <p id="Lives">Lives: <span></span></p>
+                    </div>
+
+                    <div id="UsedSpaceship"></div>
+
+                    <div id="RightArrowSlider"></div>
+                </div>
+
+                <div class="buttonBox">
+                    <span id="LoadGame" class="divButton">Load Game</span>
+                    <span id="DeleteGame" class="divButton">Delete Game</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="OptionsScreen">
+            <p class="title">Options</p>
+
+            <div id="CurrentKeysDiv">
+                <hr/>
+
+                <table id="PlayerKeysTable">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <hr/>
+
+           <div class="buttonBox">
+               <span id="ChangeBtn" class="divButton">Change</span>
+               <span id="DefaultBtn" class="divButton">Default</span>
+           </div>
+
+            </div>
+
+            <div id="ChangeCurrentKeys">
+                <form id="PlayerKeysForChange"></form>
+            </div>
+        </div>
+
+        <div id="RankingScreen">
+            <p class="title">Ranking</p>
+
+            <label for="SortRanking" id="SortRankingLabel">Sort by:</label>
+            <select id="SortRanking">
+                <option value="nickname">Nickname</option>
+                <option value="points" selected>Points</option>
+            </select>
+
+            <hr/>
+
+            <div id="RankingTableDivBox">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nickname</th>
+                        <th>Points</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <hr/>
+        </div>
+
+        <div id="InfoScreen">
+            <p class="title">Info</p>
+
+            <div id="InfoTabs">
+                <ul>
+                    <li><a href="#Rules">Rules</a></li>
+                    <li><a href="#Settings">Settings</a></li>
+                    <li><a href="#About">About</a></li>
+                </ul>
+                <div id="Rules">
+                    <p>You start the game with 3 lives and 0 points. The purpose of the game is to stay alive and destroy as many asteroids as you can.
+                        There are different bonuses and asteroids. Their positions are random.
+                    </p>
+
+                    <h2>Asteroids</h2>
+                    <p>
+                        The asteroids are with random size and speed.
+                        You can gain points from every asteroid destruction. For every destroyed asteroid you gain some points, which value depends
+                        from asteroid's size and speed. The number of the asteroids depends from the current game level. The required number of hits
+                        for asteroids destruction depends from the asteroid size.
+                    </p>
+
+                    <h2>Bonuses</h2>
+                    <p>
+                        You can also gain points if you get 'bonus points', which gives you 100 points. The number of the bonuses depends from the current
+                        game level. There is no strict rule for which bonus should be displayed. The game may display two 'live bonuses' or
+                        one 'speed bonus' and one 'live bonus'.
+                        The types of the bonuses are listed below:
+                    </p>
+
+                    <ol type="1">
+                        <li>Live - gives you +1 live.</li>
+                        <li>Points - gives you +100 points.</li>
+                        <li>Rockets - gives you +2 rockets.</li>
+                        <li>Shield - gives you +1 shield.</li>
+                        <li>Speed - gives you +1 speed.</li>
+                    </ol>
+
+                    <h2>Spaceship</h2>
+                    <p>
+                        The spaceship has unlimited number of lasers. Each time when the 'Space' key is pressed (or the key for 'Fire Lasers' action if you
+                        changed the default 'Space' key), the spaceship fires two lasers. Your number of lives decrease if you crash into asteroid.
+                        When the number of lives is 0 - Game Over! If you have missiles, you can fire them at every time you want. The first missile is fired
+                        from the left wing, the second missile - from the right wing. If you have shield, it can be activated at every time. There are 6 types
+                        of spaceships. Every spaceship has special ability - nuclear bomb or squadron. You can use the special ability only 3 times during the
+                        game. Every spaceship has different speed, strength and damage.
+                    </p>
+                </div>
+                <div id="Settings">
+                    <h2>Game</h2>
+                    <p>
+                        The game gives you the opportunity to save and load your game. You can save as many games as you want. When the game
+                        ends, you can save your score (points) into the ranking list.
+                    </p>
+
+                    <h2>Menu</h2>
+                    <p>
+                        You can see the default keys and actions in 'Options' section. You can also change some of the keys and after that
+                        you can restore the default keys.
+                    </p>
+                </div>
+                <div id="About">
+                    <h3>Contact me if you find any bugs, game optimization, questions, etc.</h3>
+                    <h4>Copyright © 2016 Save The Earth v.1.0 All rights reserved</h4>
+                    <p>Source Code: <a href="#" target="_blank">Here</a> </p>
+                    <p>Unit Tests: <a href="Tests/index-tests.html" target="_blank">Here</a></p>
+                    <p>Technologies: HTML5, CSS3, JavaScript and related libraries: jQuery, RequireJS, Squire.js, Sinon.JS, Underscore.js, Chai, Mocha</p>
+                    <p>Developed by <a href="https://github.com/itplamen" target="_blank">itplamen</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

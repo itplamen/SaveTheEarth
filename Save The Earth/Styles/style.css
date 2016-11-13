@@ -1,0 +1,566 @@
+/* ---------- Menu style ---------- */
+
+body {
+    background-image: url("../Images/site-bg.jpg");
+    background-size:cover;
+    text-align: center;
+}
+
+#Menu, canvas {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 10px;
+    border-radius: 10px;
+}
+
+#WelcomeScreen, #SelectSpaceshipScreen, #LoadGameScreen, #OptionsScreen, #RankingScreen, #InfoScreen {
+    width: 800px;
+    height: 600px;
+    background-image: url("../Images/MenuImages/menu-background.png");
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#SelectSpaceshipScreen, #LoadGameScreen, #OptionsScreen, #RankingScreen, #InfoScreen {
+    display: none;
+    padding-top: 10px;
+}
+
+#WelcomeText {
+    font-size: 24px;
+    color: #ffffff;
+    position: relative;
+    top: 80px;
+    left: 100px;
+}
+
+#NewGame, #Continue, #Options, #Ranking, #Info{
+    width: 100px;
+    height: 100px;
+    margin-top: 350px;
+    background-color: #0b1324;
+    border-radius: 10px;
+    margin-left: 50px;
+    float: left;
+}
+
+#NewGame, #Continue, #Options, #Ranking, #Info, #InfoBoard, .divButton {
+    cursor: pointer;
+    opacity: 0.6;
+    filter: alpha(opacity=60);   /* For IE8 and earlier */
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+#NewGame > img, #Continue > img, #Options > img, #Ranking > img, #Info > img {
+    width: 100px;
+    height: 100px;
+}
+
+#NewGame:hover, #Continue:hover, #Options:hover, #Ranking:hover, #Info:hover {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+}
+
+#NewGame:hover > p, #Continue:hover > p, #Options:hover > p, #Ranking:hover > p, #Info:hover > p {
+    display: block;
+}
+
+#CurrentKeysDiv table, #RankingScreen table {
+    color: #fff;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 350px;
+    margin-bottom: 20px;
+}
+
+#RankingTableDivBox {
+    overflow: auto;
+    height: 350px;
+}
+
+#CurrentKeysDiv table thead, #RankingScreen table thead {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#CurrentKeysDiv td, #RankingScreen td {
+    padding: 10px;
+    width: 100px;
+}
+
+#SortRankingLabel {
+    color: #ffffff;
+    margin-left: 520px;
+}
+
+#SortRanking {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#ChangeCurrentKeys {
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#ChangeCurrentKeys label {
+    display: inline-block;
+    width: 10em;
+}
+
+#ChangeCurrentKeys input[type="text"] {
+    display: inline-block;
+    width: 110px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 2px;
+}
+
+.textUnderBoxes, #Home > p {
+    display: none;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.title {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+}
+
+#Home {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    position: absolute;
+}
+
+#Home {
+    margin-left: 720px;
+}
+
+#Home > img {
+    width: 50px;
+    height: 50px;
+}
+
+#Home:hover {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+#Home:hover > p {
+    display: block;
+}
+
+h3 {
+    color: #fff;
+}
+
+/* ********** Slider ********** */
+#Container, #UsedSpaceship {
+    float: right;
+    width: 230px;
+    height: 230px;
+}
+
+#Wrapper, #WrapperSlider {
+    margin: 0 auto;
+
+    width: 600px;
+    height: 400px;}
+
+#LeftArrow, #RightArrow, #LeftArrowSlider, #RightArrowSlider {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 270px;
+    cursor: pointer;
+}
+
+#LeftArrow, #LeftArrowSlider {
+    background: url("../Images/MenuImages/slider-arrows.png") no-repeat bottom left;
+    left: 310px;
+}
+
+#LeftArrow:hover, #LeftArrowSlider:hover {
+    background: url("../Images/MenuImages/slider-arrows.png") no-repeat top left;
+}
+
+#RightArrow, #RightArrowSlider {
+    background: url("../Images/MenuImages/slider-arrows.png") no-repeat bottom right;
+    left: 1000px;
+}
+
+#RightArrow:hover, #RightArrowSlider:hover {
+    background: url("../Images/MenuImages/slider-arrows.png") no-repeat top right;
+}
+
+/* ******************** */
+
+#InfoTabs {
+    border-radius: 10px;
+    width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#InfoTabs ul {
+    width: 500px;
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+#InfoTabs ul li {
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    background-color: #0b1324;
+    opacity: 0.6;
+    filter: alpha(opacity=60);   /* For IE8 and earlier */
+    list-style-type: none;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+#InfoTabs ul li.selectedTab {
+    background-color: gray;
+}
+
+#InfoTabs ul li a:link, #InfoTabs ul li a:visited {
+    text-decoration: none;
+}
+
+#InfoTabs ul li a {
+    color: #ffffff;
+}
+
+#InfoTabs div {
+    display: none;
+    max-height: 400px;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 10px;
+    background-color: gray;
+    opacity: 0.6;
+    filter: alpha(opacity=60);   /* For IE8 and earlier */
+    overflow-y: auto;
+}
+
+#InfoTabs div a {
+    color: #ffffff;
+}
+
+#MessageBox {
+    width: 360px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.30);
+    padding: 8px;
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    top: 10px;
+    left: 0;
+    right: 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#MessageBackground {
+    background-color: #FBFBFB;
+    width: 360px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+#MessageTitle {
+    width: 360px;
+    height: 30px;
+    padding-top: 12px;
+    background-color: #FFFFFF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#E9E9E9));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #E9E9E9);
+    background-image: -moz-linear-gradient(top, #FFFFFF, #E9E9E9);
+    background-image: -ms-linear-gradient(top, #FFFFFF, #E9E9E9);
+    background-image: -o-linear-gradient(top, #FFFFFF, #E9E9E9);
+    background-image: linear-gradient(top, #FFFFFF, #E9E9E9);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#E9E9E9');
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 1px solid #FFFFFF;
+    color: #434343;
+    text-shadow: 1px 1px 1px #ffffff;
+    filter: dropshadow(color=#ffffff, offx=1, offy=1);
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: default;
+}
+
+#MessageDescription {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 18px;
+    color: #555555;
+    font-size: 13px;
+    text-align: center;
+    line-height: 24px;
+    border-top: 1px solid #B9B9B9;
+    cursor: default;
+}
+
+#NicknameMessageTextField {
+    margin-top: 10px;
+}
+
+#MessageButtons {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#MessageButtons > button {
+    margin-right: 10px;
+}
+
+/* -------------------- */
+
+
+/* ---------- Game styles ---------- */
+
+canvas {
+    display: none;
+}
+
+#InfoBoard {
+    width: 180px;
+    margin-left: 20px;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+#InfoBoard span {
+    display: inline-block;
+    width: 1em;
+}
+
+#InfoBoard p {
+    text-align: right;
+    position: relative;
+    left: -30px;
+}
+
+#CurrentLevel {
+    left: -60px;
+}
+
+#MenuDuringGameDiv {
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#MenuDuringGameDiv span {
+    margin-bottom: 5px;
+}
+
+#AudioPlayer {
+    display: inline-block;
+    vertical-align: bottom;
+    position: absolute;
+    top: 480px;
+    margin-left: 20px;
+}
+
+#AudioPlayer div {
+    display: block;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 10px;
+
+}
+
+#AudioPlayer div > img {
+    width: 25px;
+    height: 25px;
+}
+
+#AudioPlayer div p {
+    display: none;
+    text-align: left;
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    color: #fff;
+    opacity: 0.8;
+    font-size: 13px;
+    width: 80px;
+}
+
+#AudioPlayer div:hover {
+    -webkit-transform: translateX(11px);
+    transform: translateX(11px);
+}
+
+#AudioPlayer div:hover p {
+    display: block;
+}
+
+/* -------------------- */
+
+#SpaceshipName, #SavedGameDate {
+    text-align: center;
+}
+
+#SpaceshipFeatures, #SavedGameInfo {
+    float: left;
+    margin-left: 20px;
+    color: #fff;
+}
+
+#SpaceshipFeatures div {
+    margin-bottom: 10px;
+}
+
+#NoSavedGames {
+    margin-top: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+.featureName {
+    position: relative;
+    top: 10px
+}
+
+.progressBar {
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 5px;
+    background-color: darkslategray;
+}
+
+.percentages {
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+}
+
+.currentProgress {
+    position: absolute;
+    border-radius: 10px;
+    /*width: 50%;*/
+    height: 100%;
+    background-color: #00d6b2;
+}
+
+.divButton, #InfoBoard {
+    background-color: #0b1324;
+    color: #fff;
+    border-radius: 10px;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+#InfoBoard span {
+    margin-right: 50px;
+}
+
+#InfoBoard img {
+    position:  absolute;
+    right: -10px;
+}
+
+.divButton {
+    width: 100px;
+    height: 25px;
+    margin-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.divButton:hover, .divButton:focus, .divButton:active {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.buttonBox {
+    text-align: center;
+}
+
+hr {
+    width: 400px;
+    border: none;
+    height: 1px;
+
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Unit Tests</title>
+    <link rel="stylesheet" href="../Scripts/Libraries/mocha/mocha.css"/>
+
+    <style>
+        #BackToGameImg {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            top: 10px;
+        }
+
+        #BackToGameBtn {
+            display: inline-block;
+            margin-top: 30px;
+            margin-left: 50px;
+            width: 150px;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+    </style>
+
+    <script type="text/javascript" src="../Scripts/Libraries/require.js"></script>
+
+    <script type="text/javascript">
+        require.config({
+            waitSeconds : 30,
+            paths:{
+                'Squire': '../Scripts/Libraries/Squire',
+                'sinon': '../Scripts/Libraries/sinon',
+                'jquery':'../Scripts/Libraries/jquery-2.1.3.min',
+                'underscore' : '../Scripts/Libraries/underscore',
+                'chai': '../Scripts/Libraries/chai/chai',
+                'mocha': '../Scripts/Libraries/mocha/mocha',
+                'Stubs': 'TestSettings/Stubs',
+                'AsteroidModule': 'TestSettings/AsteroidModule',
+                'BonusModule': 'TestSettings/BonusModule',
+                'Keys': '../Scripts/Helper/Keys',
+                'GlobalConstants': '../Scripts/Helper/GlobalConstants',
+                'AmmunitionType': '../Scripts/Modules/AmmunitionType',
+                'AudioPlayer': '../Scrips/Controllers/AudioPlayer',
+                'MoveManage': '../Scrips/Controllers/MoveManager',
+                'DrawManager': '../Scrips/Controllers/DrawManager',
+                'Ammunition': '../Scripts/Modules/Ammunition',
+                'Asteroid': '../Scripts/Modules/Asteroid',
+                'Spaceship': '../Scripts/Modules/Spaceship',
+                'Bonus': '../Scripts/Modules/Bonus',
+                'RandomGenerator': '../Scripts/Helper/RandomGenerator',
+                'Actions': '../Scripts/Helper/Actions',
+                'TextInfo': '../Scripts/Modules/TextInfo',
+                'DataCheckerTest': 'Helper.Tests/DataCheckerTest',
+                'AsteroidTest': 'Modules.Tests/AsteroidTest',
+                'BonusTest': 'Modules.Tests/BonusTest',
+                'SpaceshipTest': 'Modules.Tests/SpaceshipTest',
+                'KeysTest': 'Helper.Tests/KeysTest'
+            }
+        });
+
+        require(['require', 'chai', 'mocha'], function(require, chai){
+            mocha.setup('bdd');
+            expect = chai.expect;
+
+            require(['Stubs', 'BonusTest', 'KeysTest', 'AsteroidTest', 'SpaceshipTest'], function (Stubs) {
+                mocha.run();
+                Stubs.initializeAllStubs();
+            });
+        });
+    </script>
+</head>
+<body>
+    <a href="../index.html" id="BackToGameBtn">
+        <img src="../Images/MenuImages/back-to-game-arrow.png" id="BackToGameImg" alt="Back to the game image" />
+        Back to the game
+    </a>
+    <div id="mocha"></div>
+</body>
+</html>
