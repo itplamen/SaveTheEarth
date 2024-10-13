@@ -1,6 +1,6 @@
 # itplamen.github.io
 
-#### [Play The Game](https://itplamen.github.io/)
+#### [Play The Game](https://save-the-earth-mu.vercel.app/)
 
 
 #### [Check The Unit Tests](https://itplamen.github.io/Tests/index-tests.html)
